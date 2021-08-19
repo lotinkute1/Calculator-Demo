@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huy Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+</head>
+<body class="bg-darkmode">
+    <div class="container-grid calc-darkmode">
+
+        <div onclick="showHistory()" id="history">
+            <i class="fas fa-history"></i>
+        </div>
+        <!-- div result-history này để chứa lịch sử tính gần nhất của phép tình và hiển thị trên đáp án -->
+        <div class="result-history"></div> 
+        <!-- div này dùng để chứa tất cả các lịch sử tính toán -->
+        <div class="loghistory">
+        </div>
+        <!-- đây là một cái icon thùng rác, khi click vào sẽ xóa lịch sử tính toán -->
+        <div onclick="deleteHis()" class="history-delete">
+            <i  class="fas fa-trash-alt"></i>
+        </div>
+        <div onclick="darkmode()" class="dark-mode">
+            <i class="far fa-moon "></i>
+            <i class="fas fa-moon icon-active"></i>
+        </div>
+        <div id="result" class="">0</div>
+        <div class="calculate">
+            <div class="number">
+                <div class="btn" value="7" >7</div>
+                <div class="btn" value="8" >8</div>
+                <div class="btn" value="9" >9</div>
+                <div class="btn" value="4" >4</div>
+                <div class="btn" value="5" >5</div>
+                <div class="btn" value="6" >6</div>
+                <div class="btn" value="1" >1</div>
+                <div class="btn" value="2" >2</div>
+                <div class="btn" value="3" >3</div>
+                <div class="btn" value="0" >0</div>
+                <div class="btn" value="." >.</div>
+            </div>
+        </div>
+        <div class="operation">
+            <div class="btn" value="DEL" onclick="undo()">DEL</div>
+            <div class="btn" value="AC" onclick="clean()">AC</div>
+            <div class="btn" value="*">x</div>
+            <div class="btn" value="/">/</div>
+            <div class="btn" value="+">+</div>
+            <div class="btn" value="-">-</div>
+            <div class="btn" value="" onclick="equal()">=</div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

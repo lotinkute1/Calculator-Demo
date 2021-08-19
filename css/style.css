@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(135deg,#9357E0,#FF9868);
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-grid{
+    
+    width: 400px;
+    height: 420px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(6,1fr);
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    box-shadow: 0 0 40px -15px black;
+    position: relative;
+    
+}
+#history{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.63);
+}
+#history i{
+    cursor: pointer;
+    transition: color .3s;
+}
+#history i:hover{
+    color: black;
+
+}
+.loghistory{
+    width: 100%;
+    height: 67%;
+    position: absolute;
+    right: 0;
+    bottom: -100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    z-index: 3;
+    padding: 20px;
+    transition: bottom 0.3s;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+}
+.loghistory-active{
+    bottom: 0;
+}
+
+.result-history{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 16px;
+    width: fit-content;
+    text-align: right;
+}
+
+.history-delete{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 16px;
+    z-index: 3;
+    color: rgba(0, 0, 0, 0.63);
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    transition: visibility .3s,opacity .3s;
+}
+.dark-mode{
+    position: absolute;
+    top: 10px;
+    left: 35px;
+    cursor: pointer;
+}
+.dark-mode i:first-child{
+    display: none;
+}
+.dark-mode i:nth-child(2){
+    display: none;
+}
+.fa-moon.icon-active{
+    display: inline !important;
+}
+/* khúc này là để khi thằng loghistory được active thì lúc đó thằng div history-delete cũng xuất hiện theo */
+.loghistory.loghistory-active ~ .history-delete{
+    /* transition-delay: 0.3s;
+    transition-duration:0.3s; */
+    visibility: visible;
+    opacity: 1;
+}
+
+#result{
+    grid-column: 1/-1;
+    grid-row: 1/span 2;
+    background-color: white;
+    text-align: right;
+    padding: 0 25px;
+    line-height: 140px;
+    color: black;
+    font-size: 50px;
+    
+}
+.calculate{
+    grid-column: 1/span 3;
+    grid-row: 3/-1;
+}
+.number{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+    height: 100%;
+    /* gap: 1px; */
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+}
+
+.btn{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: auto;
+    border: 0.5px solid rgba(128, 128, 128, 0.24);
+    font-size: 20px;
+    cursor: pointer; 
+    transition: background-color 0.2s;
+}
+.number>.btn{
+    /* background-color: #faedff; */
+    
+    
+}
+.number>.btn:hover{
+    /* background-color: #faedff; */
+    background-color: rgba(255, 255, 255, 0.5);
+    
+}
+.number>.btn:nth-child(10){
+    grid-column: auto/span 2;
+}
+
+.operation{
+    grid-column: 4/6;
+    grid-row: 3/-1;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
+    /* gap: 1px; */
+    background: linear-gradient(180deg,#f6d361,#ff9c66);
+    
+}
+.operation>.btn:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.operation>.btn:last-child{
+    grid-column: span 2;
+}
+
+/* .bg-darkmode{
+    background: black;
+}
+.calc-darkmode{
+    color: white;
+}
+.result-darkmode{
+    background-color: rgba(255, 255, 255, 0.527) !important;
+    backdrop-filter: blur(20px);
+    color: #FF9868  !important;
+} */
